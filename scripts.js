@@ -27,10 +27,12 @@ function getHumanChoice()
 /* Play round */
 function playRound(humanChoice, computerChoice)
 {
+    // Tie
     if (humanChoice.toLowerCase() === computerChoice)
     {
         console.log("Tie");
     }
+    // Next we enumerate all the different options which are not tie
     else if ((humanChoice.toLowerCase() === "rock") && (computerChoice === "scissors"))
     {
         console.log("Human wins");
