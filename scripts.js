@@ -3,9 +3,31 @@ let humanScore = 0;
 let computerScore = 0;
 
 console.log("Hello World!");
-playGame();
 
+// playGame();
 
+let selectionList = document.querySelector("#list");
+
+selectionList.addEventListener("click", (event) => {
+    let target = event.target;
+
+    switch(target.id){
+        case "rock":
+            console.log("Selected rock");
+            playRound("rock", getComputerChoice());
+            break;
+        case "paper": 
+            console.log("Selected paper");
+            playRound("paper", getComputerChoice());
+            break;
+        case "scissors":
+            console.log("Selected scissors");
+            playRound("scissors", getComputerChoice());
+            break;
+        default:
+            console.log("ERROR: incorrect selection");
+}
+})
 /* Computer's choice" Randomly returns rock, paper or scissors */
 function getComputerChoice()
 {
@@ -32,7 +54,7 @@ function playRound(humanChoice, computerChoice)
     {
         console.log("Tie");
     }
-    // Next we enumerate all the different options which are not tie
+    // Next we enumerate all the different options which are not a tie
     else if ((humanChoice.toLowerCase() === "rock") && (computerChoice === "scissors"))
     {
         console.log("Human wins");
